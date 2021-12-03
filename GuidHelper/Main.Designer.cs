@@ -33,6 +33,12 @@ namespace GuidHelper
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCopySureGuid = new System.Windows.Forms.Button();
+            this.imageList3 = new System.Windows.Forms.ImageList(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSureGuid = new System.Windows.Forms.TextBox();
+            this.btnPaste = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.lblType = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +48,6 @@ namespace GuidHelper
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tslblPoweredBy = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.imageList3 = new System.Windows.Forms.ImageList(this.components);
             this.btnReload = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -58,6 +63,11 @@ namespace GuidHelper
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCopySureGuid);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtSureGuid);
+            this.groupBox1.Controls.Add(this.btnPaste);
+            this.groupBox1.Controls.Add(this.btnCopy);
             this.groupBox1.Controls.Add(this.lblType);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -66,10 +76,75 @@ namespace GuidHelper
             this.groupBox1.Controls.Add(this.txtGuid);
             this.groupBox1.Location = new System.Drawing.Point(20, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(842, 305);
+            this.groupBox1.Size = new System.Drawing.Size(842, 426);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Guid Helper";
+            // 
+            // btnCopySureGuid
+            // 
+            this.btnCopySureGuid.ImageIndex = 3;
+            this.btnCopySureGuid.ImageList = this.imageList3;
+            this.btnCopySureGuid.Location = new System.Drawing.Point(548, 305);
+            this.btnCopySureGuid.Name = "btnCopySureGuid";
+            this.btnCopySureGuid.Size = new System.Drawing.Size(48, 42);
+            this.btnCopySureGuid.TabIndex = 19;
+            this.btnCopySureGuid.UseVisualStyleBackColor = true;
+            this.btnCopySureGuid.Click += new System.EventHandler(this.btnCopySureGuid_Click);
+            // 
+            // imageList3
+            // 
+            this.imageList3.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList3.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList3.ImageStream")));
+            this.imageList3.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList3.Images.SetKeyName(0, "018.png");
+            this.imageList3.Images.SetKeyName(1, "029.png");
+            this.imageList3.Images.SetKeyName(2, "103.png");
+            this.imageList3.Images.SetKeyName(3, "067.png");
+            this.imageList3.Images.SetKeyName(4, "068.png");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(27, 310);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 32);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Formatted:";
+            // 
+            // txtSureGuid
+            // 
+            this.txtSureGuid.BackColor = System.Drawing.Color.LavenderBlush;
+            this.txtSureGuid.Font = new System.Drawing.Font("Segoe UI Semibold", 11.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtSureGuid.Location = new System.Drawing.Point(26, 355);
+            this.txtSureGuid.Name = "txtSureGuid";
+            this.txtSureGuid.ReadOnly = true;
+            this.txtSureGuid.Size = new System.Drawing.Size(570, 42);
+            this.txtSureGuid.TabIndex = 17;
+            this.txtSureGuid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPaste
+            // 
+            this.btnPaste.ImageIndex = 4;
+            this.btnPaste.ImageList = this.imageList3;
+            this.btnPaste.Location = new System.Drawing.Point(548, 45);
+            this.btnPaste.Name = "btnPaste";
+            this.btnPaste.Size = new System.Drawing.Size(48, 42);
+            this.btnPaste.TabIndex = 16;
+            this.btnPaste.UseVisualStyleBackColor = true;
+            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.ImageIndex = 3;
+            this.btnCopy.ImageList = this.imageList3;
+            this.btnCopy.Location = new System.Drawing.Point(548, 185);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(48, 42);
+            this.btnCopy.TabIndex = 15;
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // lblType
             // 
@@ -118,9 +193,9 @@ namespace GuidHelper
             this.btnConvert.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnConvert.ImageIndex = 0;
             this.btnConvert.ImageList = this.imageList1;
-            this.btnConvert.Location = new System.Drawing.Point(629, 50);
+            this.btnConvert.Location = new System.Drawing.Point(628, 96);
             this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(187, 227);
+            this.btnConvert.Size = new System.Drawing.Size(188, 301);
             this.btnConvert.TabIndex = 2;
             this.btnConvert.Text = "Convert";
             this.btnConvert.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -147,7 +222,7 @@ namespace GuidHelper
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslblPoweredBy});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 439);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 552);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(884, 39);
             this.statusStrip1.TabIndex = 10;
@@ -168,7 +243,7 @@ namespace GuidHelper
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.ImageIndex = 0;
             this.btnCancel.ImageList = this.imageList3;
-            this.btnCancel.Location = new System.Drawing.Point(677, 351);
+            this.btnCancel.Location = new System.Drawing.Point(677, 468);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(185, 60);
             this.btnCancel.TabIndex = 7;
@@ -177,22 +252,13 @@ namespace GuidHelper
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // imageList3
-            // 
-            this.imageList3.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList3.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList3.ImageStream")));
-            this.imageList3.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList3.Images.SetKeyName(0, "018.png");
-            this.imageList3.Images.SetKeyName(1, "029.png");
-            this.imageList3.Images.SetKeyName(2, "103.png");
-            // 
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Segoe UI Semibold", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReload.ImageIndex = 1;
             this.btnReload.ImageList = this.imageList3;
-            this.btnReload.Location = new System.Drawing.Point(20, 351);
+            this.btnReload.Location = new System.Drawing.Point(20, 468);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(185, 60);
             this.btnReload.TabIndex = 5;
@@ -207,7 +273,7 @@ namespace GuidHelper
             this.btnGenerate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerate.ImageIndex = 2;
             this.btnGenerate.ImageList = this.imageList3;
-            this.btnGenerate.Location = new System.Drawing.Point(235, 351);
+            this.btnGenerate.Location = new System.Drawing.Point(235, 468);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(185, 60);
             this.btnGenerate.TabIndex = 6;
@@ -222,7 +288,7 @@ namespace GuidHelper
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnReload;
-            this.ClientSize = new System.Drawing.Size(884, 478);
+            this.ClientSize = new System.Drawing.Size(884, 591);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnCancel);
@@ -259,6 +325,11 @@ namespace GuidHelper
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Button btnPaste;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnCopySureGuid;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtSureGuid;
     }
 }
 

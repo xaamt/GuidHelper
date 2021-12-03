@@ -10,6 +10,7 @@
     <Copyright>Copyright © 2021 - XAMT Professionals</Copyright>
     <PackageProjectUrl>www.xamt.pro</PackageProjectUrl>
     <Authors>K.Peymani</Authors>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

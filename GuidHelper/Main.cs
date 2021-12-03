@@ -22,20 +22,21 @@ namespace GuidHelper
             var guidString = txtGuid.Text;
             if (string.IsNullOrWhiteSpace(guidString))
             {
-                MessageBox.Show(@"Guid input field is empty", @"Convert Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Guid input field is empty", "Convert Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtGuid.Focus();
                 return;
             }
 
             if (!Guid.TryParse(guidString, out var guid))
             {
-                MessageBox.Show(@"Guid is not in valid format", @"Convert Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Guid is not in valid format", "Convert Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtGuid.Focus();
                 return;
             }
 
-
             txtRaw.Text = OracleTypeHelper.DotNetToOracle(guid).ToString("N");
+
+            txtSureGuid.Text = OracleTypeHelper.OracleToDotNet(guid).ToString("B");
         }
 
         private void tslblPoweredBy_Click(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace GuidHelper
         {
             txtGuid.ResetText();
             txtRaw.ResetText();
+            txtSureGuid.ResetText();
             txtGuid.Focus();
             lblType.Text = " ... ";
         }
@@ -83,5 +85,19 @@ namespace GuidHelper
             }
         }
 
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtRaw.Text);
+        }
+
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            txtGuid.Text = Clipboard.GetText();
+        }
+
+        private void btnCopySureGuid_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtSureGuid.Text);
+        }
     }
 }
